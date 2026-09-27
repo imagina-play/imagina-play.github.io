@@ -1,0 +1,77 @@
+/* Play acompaña las tres etapas de la landing. Assets WebP con alfa. */
+.hero-art img{object-position:70% 54%}
+.hero-shade{background:linear-gradient(90deg,#170a2aee 0%,#1e0c31c7 26%,#200c3840 50%,transparent 69%),linear-gradient(0deg,#16092466,transparent 25%,transparent 82%,#14082366)}
+.hero-coordinate{color:var(--cream);background:#24103890;padding:10px 14px;border-radius:30px;letter-spacing:1.4px}
+.section-intro{align-items:center}
+.play-demo-guide{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex:0 0 390px;margin:-40px -12px -24px 0}
+.play-guide-copy{width:190px;position:relative;z-index:1}
+.play-signature{display:inline-block;background:var(--violet);color:var(--lime);padding:7px 11px;border-radius:6px 6px 6px 0;font-size:10px;font-weight:800;letter-spacing:1.4px}
+.play-guide-copy p{font-family:var(--display);font-size:20px;font-weight:700;line-height:1.2;letter-spacing:-.6px;margin:13px 0 10px}
+.play-guide-copy>span:last-child{display:block;font-size:13px;line-height:1.6;color:var(--muted)}
+.play-gaming{width:186px;height:248px;object-fit:contain;filter:drop-shadow(0 10px 10px #24103812)}
+.play-community{display:flex;align-items:center;justify-content:center;gap:15px;margin:0 0 30px}
+.play-community>span:last-child{font-size:10px;font-weight:700;letter-spacing:1.5px;max-width:205px;text-align:left;line-height:1.7;color:#d6c5e1}
+.play-avatar{display:block;position:relative;width:76px;height:76px;border:1px solid #b9a2c955;border-radius:50%;overflow:hidden;background:#38204b;flex-shrink:0}
+.play-avatar img{position:absolute;width:106px;max-width:none;height:auto;top:0;left:-21px}
+.contact-panel{grid-template-columns:1.35fr .85fr;gap:20px;position:relative;padding-top:48px;padding-bottom:42px}
+.contact-copy{position:relative;z-index:1}
+.contact-graphic{display:flex;align-self:end;transform:none;gap:0;position:relative;min-width:0}
+.contact-graphic img{width:min(100%,340px);height:auto;filter:drop-shadow(0 14px 12px #40521724)}
+.play-invitation{display:inline-block;align-self:center;background:var(--violet);color:var(--lime);border-radius:13px 13px 2px 13px;padding:13px 17px;white-space:nowrap;font-size:10px;letter-spacing:1.3px;font-weight:800;transform:rotate(-4deg);margin:0 0 12px}
+@media(min-width:801px) and (max-width:1100px){
+ .play-demo-guide{flex-basis:315px;margin-right:-10px}
+ .play-gaming{width:156px;height:208px}
+ .play-guide-copy{width:153px}
+ .play-guide-copy p{font-size:18px}
+ .contact-panel{padding-inline:38px}
+ .contact-copy h2{font-size:40px}
+ .contact-graphic img{width:260px}
+}
+@media(max-width:800px){
+ .hero-art img{object-position:77% 58%}
+ .hero-shade{background:linear-gradient(180deg,#25113d 0%,#25113d 22%,#25113d00 67%,#17092580 100%)}
+ .section-intro{display:grid;grid-template-columns:1fr auto;gap:15px}
+ .play-demo-guide{flex-basis:auto;gap:0;margin:-20px -8px -15px 0;width:230px}
+ .play-gaming{width:124px;height:166px}
+ .play-guide-copy{width:106px}
+ .play-guide-copy p{font-size:16px;letter-spacing:-.3px}
+ .play-guide-copy>span:last-child{font-size:11px}
+ .play-signature{font-size:9px;padding:6px 8px}
+ .contact-panel{grid-template-columns:1fr .65fr;padding:38px 30px;gap:5px}
+ .contact-copy h2{font-size:38px}
+ .contact-graphic{display:flex;margin-right:-15px}
+ .contact-graphic img{width:230px;max-width:none}
+ .play-invitation{font-size:8px;letter-spacing:.8px;padding:11px}
+ .contact-cta{gap:9px;padding-inline:14px;font-size:12px}
+ .contact-cta>svg:last-child{margin-left:0}
+}
+@media(max-width:600px){
+ .hero-art img{object-position:78% 58%}
+ .hero-shade{background:linear-gradient(180deg,#25113d 0%,#25113d 29%,#25113d50 49%,transparent 68%,#17092580 100%)}
+ .section-intro{grid-template-columns:1fr;gap:24px;margin-bottom:25px}
+ .play-demo-guide{width:100%;justify-content:flex-start;gap:25px;margin:0;flex-direction:row-reverse}
+ .play-gaming{width:122px;height:163px}
+ .play-guide-copy{width:auto;max-width:190px;flex:1}
+ .play-guide-copy p{font-size:20px;max-width:190px}
+ .play-guide-copy>span:last-child{font-size:13px}
+ .play-signature{font-size:9px}
+ .play-community{gap:12px;margin-bottom:24px}
+ .play-community>span:last-child{font-size:9px;letter-spacing:1px;max-width:180px}
+ .play-avatar{width:65px;height:65px}
+ .play-avatar img{width:93px;left:-19px}
+ .contact-panel{display:flex;flex-direction:column;padding:32px 24px 18px;gap:25px}
+ .contact-copy{width:100%}
+ .contact-copy h2{font-size:40px}
+ .contact-graphic{align-self:center;width:100%;margin:0;flex-direction:row;justify-content:center;align-items:center;gap:0}
+ .contact-graphic img{width:174px;max-width:65%;flex-shrink:0;order:1}
+ .play-invitation{font-size:9px;letter-spacing:.5px;padding:12px;white-space:normal;line-height:1.6;width:105px;order:0}
+}
+@media(max-width:360px){
+ .play-demo-guide{gap:15px}
+ .play-gaming{width:99px;height:132px}
+ .play-guide-copy p{font-size:18px}
+ .play-guide-copy>span:last-child{font-size:12px}
+ .contact-copy h2{font-size:35px}
+ .contact-graphic img{width:145px}
+ .play-invitation{padding:10px;font-size:8px;width:90px}
+}
