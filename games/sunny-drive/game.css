@@ -62,3 +62,6 @@ body[data-theme=neon]:not(.racing) .turbo-control kbd{background:#ffdc32}
 @media(max-width:700px){body:not(.racing) .vignette{background:linear-gradient(180deg,var(--menu-wash) 0%,var(--menu-wash) 22%,transparent 49%),linear-gradient(90deg,var(--menu-wash),var(--menu-fade) 90%),linear-gradient(0deg,var(--menu-wash),transparent 36%)}}
 
 body:not(.racing) #topbar{background:linear-gradient(180deg,var(--menu-wash),var(--menu-wash) 55%,transparent)}
+
+.results-home{display:inline-flex;align-items:center;gap:10px;min-height:42px;margin:0 0 14px;padding:10px 13px;border:1px solid #0a827f44;border-radius:8px;background:#e7f2e9;color:#0a625f;text-decoration:none;font:800 10px Sora;letter-spacing:.5px}.results-home span{font-size:20px;line-height:1}.results-home:hover{background:#d7ede2;color:#102e39}.results-home:focus-visible{outline:3px solid #0a827f;outline-offset:3px}
+@media(max-width:700px){.results-home{display:flex;justify-content:center;width:100%;min-height:45px;margin-bottom:20px}}
