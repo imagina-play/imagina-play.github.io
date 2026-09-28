@@ -24,3 +24,41 @@
 @media(min-width:701px) and (max-height:800px){.menu-copy .school{width:118px}.menu-copy h1{font-size:57px}.circuits .circuit{display:grid;align-content:start;gap:1px;min-height:66px}.circuit small{display:block}.circuit strong{margin:4px 0}.controls-guide p{font-size:11px}.control-item kbd{min-height:30px}.controls-guide{margin-top:12px}#menu-footer{display:none}}
 @media(max-width:700px){.controls-guide .guide-title{font-size:9px}.controls-guide p{font-size:11px}}
 @media(min-width:701px) and (max-height:800px){.menu{padding-bottom:25px}}
+
+/* Circuit showroom and brand-led finish. */
+body{--menu-wash:#f5f8e9ed;--menu-fade:#eaf6e100;--panel:#fff9e9dc;--muted:#456b70}
+body[data-theme=desert]{--menu-wash:#fff0dcec;--menu-fade:#ffcc9900;--panel:#fff5e5e8;--teal:#9a451f;--muted:#795b48}
+body[data-theme=neon]:not(.racing){--ink:#f7f5ed;--teal:#7ffff0;--menu-wash:#10162eee;--menu-fade:#10162e00;--panel:#172039ed;--muted:#bdccdf}
+body:not(.racing) .vignette{background:linear-gradient(90deg,var(--menu-wash) 0%,var(--menu-wash) 28%,var(--menu-fade) 68%)}
+.school,.menu-copy .school{width:244px;padding:0;border-radius:0;background:transparent;box-shadow:none;margin-bottom:16px}
+.school img{width:100%;height:auto;max-height:85px;object-fit:contain;object-position:left center}
+.menu-copy .eyebrow{margin-top:12px}.selection-heading #best,.controls-guide p{color:var(--muted)}
+.controls-guide{background:var(--panel)}.circuit{border-color:#60757955}.primary,.turbo-control kbd{color:#102e39}.control-item kbd{background:#163c47}
+.circuit.selected{background:#143b44;color:#fff9e9}.circuit.selected .circuit-number{color:#ffdc32}
+body[data-theme=neon]:not(.racing) .school{padding:10px 13px;background:#fff9e9ec;border-radius:10px}
+body[data-theme=neon]:not(.racing) .circuit{background:#182940c4;color:#e8f3f4}
+body[data-theme=neon]:not(.racing) .circuit.selected{background:#70efdb;color:#101e36;border-color:#8cfff0}
+body[data-theme=neon]:not(.racing) .selected .circuit-number{color:#145657}
+body[data-theme=neon]:not(.racing) .icon-button{background:#202b4dcc;border-color:#94b4cf40}
+body[data-theme=neon]:not(.racing) .control-item kbd{background:#2a4560}
+body[data-theme=neon]:not(.racing) .turbo-control kbd{background:#ffdc32}
+.hero-label{left:67%;bottom:12%;transform:none;max-width:28%;background:#102e3970;backdrop-filter:blur(10px);padding:13px 17px;border-radius:10px}
+.hero-label .label-line{width:20px;background:#ffdc32}.hero-label b{font-size:13px;letter-spacing:.2px}.hero-label small{display:block;margin-top:5px;line-height:1.5}
+.results-card{--ink:#102e39;--teal:#0a827f;width:min(900px,100%);display:grid;grid-template-columns:1fr 1.08fr;gap:0 30px;padding:30px;text-align:left;overflow:hidden}
+.result-summary{grid-column:1;grid-row:1}.result-heading{display:flex;align-items:center;gap:10px}.result-heading .medal{font-size:36px;margin:0}.result-heading .eyebrow{margin:0;justify-content:flex-start;font-size:9px}
+.result-summary h2{font-size:35px;margin:18px 0 12px;outline:none}.result-summary p{margin:8px 0}.stats{text-align:center;padding:18px 0;margin:18px 0}.stats strong{font-size:24px}
+.campaign-cta{grid-column:2;grid-row:1/3;background:#251137;color:#fff9e9;border-radius:14px;padding:27px;display:flex;flex-direction:column;align-items:flex-start}
+.imagina-signature{font:900 19px/.95 Sora;letter-spacing:-1px;display:flex;align-items:center;gap:8px}.imagina-signature b{font:800 10px Sora;letter-spacing:.6px;padding:6px 8px;border-radius:5px;background:#c5ff31;color:#251137}
+.campaign-tag{font:800 8px Sora;letter-spacing:1.4px;color:#c5ff31;margin-top:30px}.campaign-cta h3{font:800 25px/1.16 Sora;letter-spacing:-1px;margin:12px 0}.campaign-cta h3 em{font-style:normal;color:#c5ff31}
+.campaign-cta p{font-size:12px;line-height:1.65;margin:6px 0;color:#e0d3ea}.campaign-cta p strong{color:#fff9e9}.campaign-cta .campaign-invite{font-size:13px;margin:8px 0 20px;color:#fff9e9}
+.campaign-button{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;margin-top:auto;border-radius:7px;background:#c5ff31;color:#251137;font:800 12px/1.5 Sora;letter-spacing:.1px;text-decoration:none;width:100%;box-shadow:0 4px 0 #86b61c}.campaign-button:hover{background:#dbff7d;transform:translateY(-2px)}.campaign-button span{font-size:27px}.campaign-contact{font-size:10px;margin-top:14px;color:#e1d6e8}.reward-example{font-size:9px;margin-top:14px;color:#b9a9c9}
+.race-actions{grid-column:1;grid-row:2;align-self:end}.race-actions .primary{font-size:11px}.extra-race-actions{display:flex;align-items:center;gap:8px;margin-top:12px}.extra-race-actions .secondary{margin:0;width:auto;flex:1;font-size:11px;padding:12px 8px}.extra-race-actions .text-button{flex:1;font-size:11px;padding:12px 5px}
+@media(min-width:701px) and (max-height:800px){.menu-copy .school{width:216px;margin-bottom:12px}.school img{max-height:70px}.menu{padding-top:72px;gap:12px}.menu-copy h1{font-size:54px}.menu-copy .eyebrow{margin:8px 0}.hero-label{display:flex}.results-card{padding:24px;gap:0 24px}.campaign-cta{padding:24px}.campaign-tag{margin-top:24px}}
+@media(max-width:700px){.menu-copy .school{width:202px;margin-bottom:21px}.school img{max-height:67px}.menu{padding-top:80px;gap:145px;padding-bottom:24px}.selection{background:linear-gradient(0deg,var(--menu-wash) 85%,transparent)}body:not(.racing) .vignette{background:linear-gradient(90deg,var(--menu-wash),var(--menu-fade) 90%),linear-gradient(0deg,var(--menu-wash),transparent 36%)}.hero-label,#menu-footer{display:none}.results-card{display:flex;flex-direction:column;padding:21px;gap:21px;max-width:460px}.result-summary h2{font-size:29px;line-height:1.1;margin:10px 0}.result-heading .medal{font-size:27px}.stats{margin:12px 0;padding:12px 0}.stats strong{font-size:22px}.campaign-cta{padding:22px}.campaign-tag{margin-top:22px}.campaign-cta h3{font-size:25px}.race-actions .primary{margin-top:0}.campaign-cta p{font-size:12px}.campaign-button{min-height:62px}.extra-race-actions{gap:10px}.overlay{padding:14px}.reward-example{font-size:9px}}
+@media(max-height:620px) and (orientation:landscape){.menu-copy .school{width:170px}.menu-copy h1{font-size:48px}.hero-label{display:none}.menu{padding-top:65px}.results-card{margin:0 auto}.campaign-cta{padding:20px}.campaign-tag{margin-top:20px}}
+
+.controls-guide .turbo-control kbd{background:var(--sun);color:#102e39}
+@media(max-width:700px){.menu{gap:170px}}
+@media(max-width:700px){body:not(.racing) .vignette{background:linear-gradient(180deg,var(--menu-wash) 0%,var(--menu-wash) 22%,transparent 49%),linear-gradient(90deg,var(--menu-wash),var(--menu-fade) 90%),linear-gradient(0deg,var(--menu-wash),transparent 36%)}}
+
+body:not(.racing) #topbar{background:linear-gradient(180deg,var(--menu-wash),var(--menu-wash) 55%,transparent)}
