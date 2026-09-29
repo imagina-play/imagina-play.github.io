@@ -1,0 +1,681 @@
+{
+  "generator": "built-in image_gen",
+  "player": {
+    "file": "player.webp",
+    "width": 1536,
+    "height": 1024,
+    "columns": 6,
+    "rows": 4,
+    "cell": 256,
+    "facing": "right",
+    "frames": [
+      {
+        "index": 0,
+        "state": "idle1",
+        "source": [
+          81,
+          22,
+          97,
+          231
+        ],
+        "nominalCell": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "state": "idle2",
+        "source": [
+          337,
+          23,
+          95,
+          230
+        ],
+        "nominalCell": [
+          1,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "state": "run1",
+        "source": [
+          548,
+          36,
+          181,
+          217
+        ],
+        "nominalCell": [
+          2,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "state": "run2",
+        "source": [
+          823,
+          32,
+          145,
+          221
+        ],
+        "nominalCell": [
+          3,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "state": "run3",
+        "source": [
+          1056,
+          33,
+          179,
+          220
+        ],
+        "nominalCell": [
+          4,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "state": "run4",
+        "source": [
+          1304,
+          32,
+          192,
+          221
+        ],
+        "nominalCell": [
+          5,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "state": "jumpAscent",
+        "source": [
+          55,
+          326,
+          147,
+          180
+        ],
+        "nominalCell": [
+          0,
+          1
+        ]
+      },
+      {
+        "index": 7,
+        "state": "jumpApex",
+        "source": [
+          301,
+          270,
+          148,
+          198
+        ],
+        "nominalCell": [
+          1,
+          1
+        ]
+      },
+      {
+        "index": 8,
+        "state": "fall",
+        "source": [
+          556,
+          282,
+          157,
+          225
+        ],
+        "nominalCell": [
+          2,
+          1
+        ]
+      },
+      {
+        "index": 9,
+        "state": "doubleJump",
+        "source": [
+          822,
+          275,
+          127,
+          237
+        ],
+        "nominalCell": [
+          3,
+          1
+        ]
+      },
+      {
+        "index": 10,
+        "state": "dash1",
+        "source": [
+          1029,
+          326,
+          231,
+          181
+        ],
+        "nominalCell": [
+          4,
+          1
+        ]
+      },
+      {
+        "index": 11,
+        "state": "dash2",
+        "source": [
+          1311,
+          299,
+          191,
+          208
+        ],
+        "nominalCell": [
+          5,
+          1
+        ]
+      },
+      {
+        "index": 12,
+        "state": "punch1",
+        "source": [
+          21,
+          548,
+          203,
+          216
+        ],
+        "nominalCell": [
+          0,
+          2
+        ]
+      },
+      {
+        "index": 13,
+        "state": "punch2",
+        "source": [
+          297,
+          534,
+          157,
+          230
+        ],
+        "nominalCell": [
+          1,
+          2
+        ]
+      },
+      {
+        "index": 14,
+        "state": "punch3",
+        "source": [
+          517,
+          549,
+          230,
+          215
+        ],
+        "nominalCell": [
+          2,
+          2
+        ]
+      },
+      {
+        "index": 15,
+        "state": "machete1",
+        "source": [
+          799,
+          512,
+          225,
+          252
+        ],
+        "nominalCell": [
+          3,
+          2
+        ]
+      },
+      {
+        "index": 16,
+        "state": "machete2",
+        "source": [
+          1024,
+          561,
+          256,
+          203
+        ],
+        "nominalCell": [
+          4,
+          2
+        ]
+      },
+      {
+        "index": 17,
+        "state": "machete3",
+        "source": [
+          1280,
+          548,
+          248,
+          216
+        ],
+        "nominalCell": [
+          5,
+          2
+        ]
+      },
+      {
+        "index": 18,
+        "state": "plasma1",
+        "source": [
+          32,
+          793,
+          212,
+          209
+        ],
+        "nominalCell": [
+          0,
+          3
+        ]
+      },
+      {
+        "index": 19,
+        "state": "plasma2",
+        "source": [
+          288,
+          796,
+          224,
+          206
+        ],
+        "nominalCell": [
+          1,
+          3
+        ]
+      },
+      {
+        "index": 20,
+        "state": "parry1",
+        "source": [
+          512,
+          791,
+          192,
+          211
+        ],
+        "nominalCell": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 21,
+        "state": "parry2",
+        "source": [
+          789,
+          778,
+          174,
+          224
+        ],
+        "nominalCell": [
+          3,
+          3
+        ]
+      },
+      {
+        "index": 22,
+        "state": "hurt",
+        "source": [
+          1033,
+          799,
+          247,
+          200
+        ],
+        "nominalCell": [
+          4,
+          3
+        ]
+      },
+      {
+        "index": 23,
+        "state": "defeated",
+        "source": [
+          1280,
+          919,
+          232,
+          80
+        ],
+        "nominalCell": [
+          5,
+          3
+        ]
+      }
+    ]
+  },
+  "enemies": {
+    "file": "enemies.webp",
+    "width": 1448,
+    "height": 1086,
+    "columns": 4,
+    "rows": 3,
+    "nominalCell": 362,
+    "facing": "left",
+    "note": "Use source rectangles below to preserve slight generated sprite overhang beyond nominal square cells. Source bounds are alpha-tight and should be rendered bottom-centered. Boss visual size is controlled separately by engine.",
+    "frames": [
+      {
+        "index": 0,
+        "state": "bureaucratIdle",
+        "source": [
+          95,
+          67,
+          166,
+          277
+        ],
+        "nominalCell": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "state": "bureaucratWalk",
+        "source": [
+          435,
+          67,
+          193,
+          283
+        ],
+        "nominalCell": [
+          1,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "state": "bureaucratWindup",
+        "source": [
+          809,
+          87,
+          205,
+          261
+        ],
+        "nominalCell": [
+          2,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "state": "bureaucratAttack",
+        "source": [
+          1094,
+          87,
+          325,
+          261
+        ],
+        "nominalCell": [
+          3,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "state": "shieldIdle",
+        "source": [
+          84,
+          417,
+          182,
+          273
+        ],
+        "nominalCell": [
+          0,
+          1
+        ]
+      },
+      {
+        "index": 5,
+        "state": "shieldWalk",
+        "source": [
+          427,
+          423,
+          217,
+          267
+        ],
+        "nominalCell": [
+          1,
+          1
+        ]
+      },
+      {
+        "index": 6,
+        "state": "shieldWindup",
+        "source": [
+          803,
+          383,
+          216,
+          308
+        ],
+        "nominalCell": [
+          2,
+          1
+        ]
+      },
+      {
+        "index": 7,
+        "state": "shieldAttack",
+        "source": [
+          1067,
+          432,
+          350,
+          259
+        ],
+        "nominalCell": [
+          3,
+          1
+        ]
+      },
+      {
+        "index": 8,
+        "state": "bossIdle",
+        "source": [
+          46,
+          729,
+          297,
+          307
+        ],
+        "nominalCell": [
+          0,
+          2
+        ]
+      },
+      {
+        "index": 9,
+        "state": "bossWindup",
+        "source": [
+          394,
+          709,
+          297,
+          328
+        ],
+        "nominalCell": [
+          1,
+          2
+        ]
+      },
+      {
+        "index": 10,
+        "state": "bossAttack",
+        "source": [
+          720,
+          765,
+          390,
+          271
+        ],
+        "nominalCell": [
+          2,
+          2
+        ]
+      },
+      {
+        "index": 11,
+        "state": "bossHurt",
+        "source": [
+          1163,
+          739,
+          253,
+          299
+        ],
+        "nominalCell": [
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  "backgrounds": [
+    {
+      "file": "street.webp",
+      "width": 1659,
+      "height": 948
+    },
+    {
+      "file": "palace.webp",
+      "width": 1659,
+      "height": 948
+    },
+    {
+      "file": "archive.webp",
+      "width": 1659,
+      "height": 948
+    }
+  ],
+  "machete": {
+    "file": "machete.webp",
+    "width": 1254,
+    "height": 1254,
+    "worldScale": 0.165,
+    "frames": [
+      {
+        "index": 0,
+        "state": "chop-anticipation",
+        "source": [
+          0,
+          0,
+          418,
+          480
+        ],
+        "anchor": [
+          195,
+          430
+        ]
+      },
+      {
+        "index": 1,
+        "state": "chop-impact",
+        "source": [
+          418,
+          0,
+          477,
+          480
+        ],
+        "anchor": [
+          171,
+          430
+        ]
+      },
+      {
+        "index": 2,
+        "state": "chop-recovery",
+        "source": [
+          895,
+          0,
+          359,
+          480
+        ],
+        "anchor": [
+          139,
+          430
+        ]
+      },
+      {
+        "index": 3,
+        "state": "sweep-anticipation",
+        "source": [
+          0,
+          480,
+          418,
+          336
+        ],
+        "anchor": [
+          246,
+          325
+        ]
+      },
+      {
+        "index": 4,
+        "state": "sweep-impact",
+        "source": [
+          418,
+          480,
+          484,
+          336
+        ],
+        "anchor": [
+          143,
+          325
+        ]
+      },
+      {
+        "index": 5,
+        "state": "sweep-recovery",
+        "source": [
+          902,
+          480,
+          352,
+          336
+        ],
+        "anchor": [
+          163,
+          325
+        ]
+      },
+      {
+        "index": 6,
+        "state": "rise-anticipation",
+        "source": [
+          0,
+          816,
+          418,
+          438
+        ],
+        "anchor": [
+          231,
+          402
+        ]
+      },
+      {
+        "index": 7,
+        "state": "rise-impact",
+        "source": [
+          418,
+          816,
+          482,
+          438
+        ],
+        "anchor": [
+          188,
+          400
+        ]
+      },
+      {
+        "index": 8,
+        "state": "rise-recovery",
+        "source": [
+          900,
+          816,
+          354,
+          438
+        ],
+        "anchor": [
+          168,
+          400
+        ]
+      }
+    ]
+  }
+}
