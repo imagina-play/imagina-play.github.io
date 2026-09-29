@@ -68,6 +68,48 @@ function pause(){if(!panelOpen&&g.mode==='playing'){g.pause();const actions=[['S
 function menu(){g.mode='menu';g.bossActive=false;qaSession=false;unlockTimer=0;hideDialog();screenMode();}
 function help(){fromHelp=g.mode;if(g.mode==='playing')g.pause();showDialog('MANUAL DE COMBATE','Dos botones. Muchas respuestas.','<div class="control-grid"><div><b>MOVER / ESQUIVAR</b><span>Joystick o A/D / ← →<br>↓ + A o K: dash<br>El dash evita daño</span></div><div><b>SALTAR / ATACAR</b><span>A o Espacio: salto<br>Doble salto: ante el jefe<br>B o J: combo de 3</span></div><div><b>PARRY / GUARDIA</b><span>↓ + B o L: parry<br>Mantén B: cubrirte<br>Parry devuelve plasma</span></div></div><p>La señal <b style="color:#ffd789">!</b> anuncia un ataque. Haz parry justo antes del impacto. Los destellos verdes recuperan salud; los faros activan puntos de control.</p>',[['ENTENDIDO',()=>{if(fromHelp==='menu'){g.mode='menu';hideDialog();}else{g.mode='playing';hideDialog();}}]]);}
 $('#start').onclick=begin;$('#how').onclick=help;$('#pause').onclick=pause;$('#qa-open').onclick=()=>panelOpen==='qa'?closePanel():openQA();$('#qa-back').onclick=()=>closePanel();for(const b of document.querySelectorAll('[data-qa-destination]'))b.onclick=()=>startQA(b.dataset.qaDestination==='boss'?'boss':Number(b.dataset.qaDestination));
+// Fullscreen must be requested directly from a player gesture. The help panel
+// freezes the simulation and keeps any existing pause/level dialog underneath.
+const standaloneDisplay=window.matchMedia('(display-mode: standalone)'),fullscreenDisplay=window.matchMedia('(display-mode: fullscreen)');
+const fullscreenButtons=[...document.querySelectorAll('[data-fullscreen]')];
+const fullscreenElement=()=>document.fullscreenElement||document.webkitFullscreenElement;
+const standalone=()=>standaloneDisplay.matches||fullscreenDisplay.matches||window.navigator.standalone===true;
+const canFullscreen=()=>!!(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen);
+let fullscreenPending=false;
+function displayHelp(message=''){
+ $('#display-feedback').textContent=message;$('#display-feedback').hidden=!message;openPanel('display');
+}
+function syncFullscreen(){
+ const active=!!fullscreenElement();
+ for(const b of fullscreenButtons){
+  const label=active?'SALIR DE PANTALLA COMPLETA':'PANTALLA COMPLETA';
+  b.setAttribute('aria-pressed',String(active));b.setAttribute('aria-label',active?'Salir de pantalla completa':'Pantalla completa');b.title=label;
+  const text=b.querySelector('[data-fullscreen-label]');if(text)text.textContent=label;
+  b.hidden=!active&&standalone()&&!canFullscreen();
+ }
+ fitViewport();
+}
+async function toggleFullscreen(){
+ if(fullscreenPending)return;
+ if(!fullscreenElement()&&!canFullscreen()){displayHelp('Este navegador no permite activar la pantalla completa aquí. Usa el acceso de la pantalla de inicio.');return;}
+ fullscreenPending=true;
+ try{
+  if(fullscreenElement()){
+   const exit=document.exitFullscreen||document.webkitExitFullscreen;
+   if(exit)await exit.call(document);
+  }else{
+   const root=document.documentElement;
+   if(root.requestFullscreen)await root.requestFullscreen({navigationUI:'hide'});
+   else await root.webkitRequestFullscreen();
+  }
+ }catch{displayHelp('El navegador no pudo activar la pantalla completa. Puedes seguir jugando o usar estas alternativas.');}
+ finally{fullscreenPending=false;syncFullscreen();}
+}
+for(const b of fullscreenButtons)b.addEventListener('click',toggleFullscreen);
+for(const b of document.querySelectorAll('[data-display-help]'))b.addEventListener('click',()=>displayHelp());
+$('#display-back').onclick=()=>closePanel();
+document.addEventListener('fullscreenchange',syncFullscreen);document.addEventListener('webkitfullscreenchange',syncFullscreen);
+standaloneDisplay.addEventListener?.('change',syncFullscreen);fullscreenDisplay.addEventListener?.('change',syncFullscreen);syncFullscreen();
 $('#sound').onclick=()=>{sound.init();sound.muted=!sound.muted;$('#sound').textContent=sound.muted?'♪̸':'♪';$('#sound').setAttribute('aria-pressed',String(sound.muted));};
 function fitViewport(){
  const v=window.visualViewport,root=document.documentElement;
@@ -87,8 +129,11 @@ document.addEventListener('keydown',e=>{const k=e.code;
   }else if(!['Enter','Space'].includes(k))e.preventDefault();
   return;
  }
-if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD','KeyJ','KeyK','KeyL','Escape'].includes(k))e.preventDefault();if(e.repeat)return;keys.add(k);if(k==='Escape'){if(g.mode==='playing')pause();else if(g.mode==='paused'){g.resume();hideDialog();}return;}if(g.mode!=='playing')return;if(['Space','ArrowUp','KeyW'].includes(k)){if(keys.has('ArrowDown')||keys.has('KeyS'))g.dash();else g.jump();}if(k==='KeyJ'){if(keys.has('ArrowDown')||keys.has('KeyS'))g.parry();else g.attack();touch.bTime=performance.now();}if(k==='KeyK')g.dash();if(k==='KeyL')g.parry();});
+if(['Space','Enter'].includes(k)&&e.target.closest?.('button,a'))return;
+if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD','KeyJ','KeyK','KeyL','Escape'].includes(k))e.preventDefault();if(e.repeat)return;keys.add(k);if(k==='Escape'){if(g.mode==='playing')pause();else if(g.mode==='paused'){g.resume();hideDialog();}return;}if(g.mode!=='playing')return;if(['Space','Enter'].includes(k)&&e.target.closest?.('button,a'))return;
+if(['Space','ArrowUp','KeyW'].includes(k)){if(keys.has('ArrowDown')||keys.has('KeyS'))g.dash();else g.jump();}if(k==='KeyJ'){if(keys.has('ArrowDown')||keys.has('KeyS'))g.parry();else g.attack();touch.bTime=performance.now();}if(k==='KeyK')g.dash();if(k==='KeyL')g.parry();});
 document.addEventListener('keyup',e=>{keys.delete(e.code);});
+document.addEventListener('click',e=>{if(e.detail>0&&e.target.closest?.('#hud button'))e.target.closest('button').blur();});
 const joy=$('#joystick');
 function joyMove(e){if(e.pointerId!==touch.id)return;const r=joy.getBoundingClientRect(),radius=r.width*.38;let x=(e.clientX-r.left-r.width/2)/radius,y=(e.clientY-r.top-r.height/2)/radius;const len=Math.hypot(x,y);if(len>1){x/=len;y/=len;}touch.x=Math.abs(x)>.18?x:0;touch.y=y;$('#stick').style.transform=`translate(${x*radius*.75}px,${y*radius*.75}px)`;}
 joy.addEventListener('pointerdown',e=>{e.preventDefault();if(touch.id!==null)return;touch.id=e.pointerId;joy.setPointerCapture(e.pointerId);joyMove(e);sound.init();});joy.addEventListener('pointermove',joyMove);function joyEnd(e){if(e.pointerId===touch.id){touch.id=null;touch.x=touch.y=0;$('#stick').style.transform='';}}joy.addEventListener('pointerup',joyEnd);joy.addEventListener('pointercancel',joyEnd);joy.addEventListener('lostpointercapture',joyEnd);

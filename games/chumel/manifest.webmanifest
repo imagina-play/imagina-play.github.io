@@ -1,11 +1,11 @@
 {
   "id": "./",
-  "name": "El Pulso Â· Contra la CorrupciÃ³n",
+  "name": "El Pulso · Contra la Corrupción",
   "short_name": "El Pulso",
   "lang": "es-MX",
   "start_url": "./",
   "scope": "./",
-  "display": "browser",
+  "display": "standalone",
   "orientation": "landscape",
   "background_color": "#111114",
   "theme_color": "#111114",
