@@ -25,13 +25,14 @@
   let gameURL = null;
   try { if (demo.src) { const candidate = new URL(demo.src, location.href); if (candidate.origin === location.origin && /^https?:$/.test(candidate.protocol)) gameURL = candidate; } } catch (_) {}
   if (gameURL) {
-    playButton.disabled = false;
+    if ('disabled' in playButton) playButton.disabled = false;
+    if (demo.launch === 'page') playButton.href = gameURL.href;
     document.getElementById('demo-status-label').textContent = 'LISTA PARA JUGAR';
     document.querySelector('.demo-status').classList.add('is-ready');
-    document.getElementById('demo-availability').textContent = 'Juega aquí, sin descargar nada.';
+    document.getElementById('demo-availability').textContent = 'Celular en horizontal y computadora · Sin descargas';
     document.getElementById('game-title').textContent = demo.title || 'Demo';
     document.querySelector('.game-dialog-note').textContent = demo.instructions || '';
-    playButton.addEventListener('click', async () => {
+    if (demo.launch !== 'page') playButton.addEventListener('click', async () => {
       const version = ++launchVersion;
       clearTimeout(closeTimer);
       frameWrap.replaceChildren();
