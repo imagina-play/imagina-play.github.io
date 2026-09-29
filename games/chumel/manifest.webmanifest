@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "El Pulso Â· Contra la CorrupciÃ³n",
+  "short_name": "El Pulso",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "orientation": "landscape",
+  "background_color": "#111114",
+  "theme_color": "#111114",
+  "icons": [
+    {
+      "src": "assets/app-icon.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
